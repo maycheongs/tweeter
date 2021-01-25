@@ -30,6 +30,11 @@ header {
   justify-content: center;
 }
 
+main {
+  width: 90%;
+  margin: auto;  
+}
+
 
 
 /*

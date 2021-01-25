@@ -1,0 +1,28 @@
+main form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#tweet-text {
+  width: 100%;
+  background-color: inherit;
+  border: 0 none #FFF;
+  overflow: hidden;
+  outline:none;
+  border-bottom: 3px solid #545149;
+  margin-bottom: 0.5em;
+  font-style: italic;
+}
+
+form button {
+  font-family: Bungee, sans-serif;
+  color: #f4f1ec;
+  background-color: #4056A1;
+}
+
+main form div {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  
+}
