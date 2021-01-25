@@ -21,7 +21,14 @@ body {
   font-family: "Source Sans Pro", sans-serif;  
 }  
 
-
+header {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
 
 
 
