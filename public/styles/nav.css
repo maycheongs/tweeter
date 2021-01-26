@@ -3,7 +3,10 @@ nav {
   color: #FFFFFF;
   height: 84px;
   padding: 1.5em;
-  width: 100%;  
+  width: 100%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 nav span {
