@@ -1,0 +1,40 @@
+#all-tweets article {
+  border: 3px solid #545149;
+  padding: 0.5em;
+  margin-top: 1em;
+  display:flex;
+  flex-wrap: wrap
+}
+
+#all-tweets header { 
+  padding: 0.5em;
+  height: 60px;  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#all-tweets footer {
+  border-top: 3px solid #545149;
+  padding: 0.5em;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.tweeted-text {
+  margin: 1em;
+}
+
+#all-tweets .user-id {
+  color: transparent;
+}
+
+#all-tweets article:hover .user-id {  
+  color: #a3a3c2;
+}
+
+article:hover {
+  box-shadow: 5px 5px 5px #a3a3c2;  
+}
