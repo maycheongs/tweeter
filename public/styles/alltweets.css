@@ -12,12 +12,14 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 
 #all-tweets footer {
   border-top: 3px solid #545149;
   padding: 0.5em;
   width: 100%;
+  font-size: 15px;
   display: flex;
   justify-content: space-between;
   
@@ -37,4 +39,16 @@
 
 article:hover {
   box-shadow: 5px 5px 5px #a3a3c2;  
+}
+
+#all-tweets .user-name {
+  display: flex;
+  align-items: center;
+  font-weight: 300;
+}
+
+#all-tweets .avatar {
+  padding:0.5em;
+  height: 3em;
+  width: 3em;
 }
