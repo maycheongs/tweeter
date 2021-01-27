@@ -11,12 +11,18 @@ $(document).ready(function() {
 
 //Create html element with a tweet obj.
 const createTweetElement = function(tweetObj) {
+
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
   const tweetEl = 
   `<article>
     <header>
       <span class="user-name"><img src="${tweetObj.user.avatars}" class="avatar">${tweetObj.user.name}</span><span class="user-id">${tweetObj.user.handle}</span>
     </header>
-    <div class="tweeted-text">${tweetObj.content.text}
+    <div class="tweeted-text">${escape(tweetObj.content.text)}
     </div>
     <footer>
       <span class="timestamp">created at 51651651</span><span class="interact">like buttons</span>
@@ -24,6 +30,8 @@ const createTweetElement = function(tweetObj) {
 </article>
 `;
 return tweetEl;
+
+console.log($("<div>").text("Je pense , donc je suis"))
 }
 
 //Loop through array of tweet objs and append to #all-tweets section.
@@ -34,7 +42,8 @@ const renderTweets = function(tweetObjsArr) {
     $tweet = createTweetElement(tweetObj);
     render = $tweet + render;
   }
-  $('#all-tweets').append(render)
+  $('#all-tweets').append(render);
+  
 }
 
 //Ajax /GET from /tweets to get tweets database from backend. 
@@ -42,7 +51,7 @@ const renderTweets = function(tweetObjsArr) {
 const loadTweets = function() {
 
   $.ajax({
-    url: `/tweets`,
+    url: `http://localhost:8080/tweets`,
     method: 'GET'
   })
   .done(result => {                    //already JSON parsed
@@ -59,15 +68,21 @@ loadTweets();
 $('#tweet-form').on('submit', function(event) {
   
   event.preventDefault();
+  $('#tweet-error').closest('.display').hide();
 
   //Check for invalid text in the form i.e. empty strings/ only spaces.
 
   if ($.trim($('#tweet-text').val()) === '') {
-    alert('No text to submit!');
+
+    $('#error-msg').html(` <b>Error</b>: Please enter something`);
+    $('#tweet-error').closest('.display').slideDown('fast');
+    
     return;
   }
   if ($('#tweet-text').val().length > 140) {
-    alert('Over text limit!');
+
+    $('#error-msg').html(` <b>Error</b>: Too long. Please stay within the char limit :)`);
+    $('#tweet-error').closest('.display').slideDown('fast');
     return;
   }
 
@@ -75,7 +90,7 @@ $('#tweet-form').on('submit', function(event) {
   $('#all-tweets').empty();
 
   $.ajax({
-    url: `/tweets`,
+    url: `http://localhost:8080/tweets`,
     method: 'POST',
     data: formText,
   })

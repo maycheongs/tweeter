@@ -46,6 +46,13 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
+        <div class="display" hidden>
+        <div id="tweet-error">
+          <img src="https://www.pngjoy.com/pngl/334/6258437_error-icon-chicken-as-food-hd-png-download.png" alt="Error Icon - Chicken As Food, HD Png Download@pngjoy.com">
+          <div id="error-msg">Test Error Message          
+          </div>
+        </div>
+        </div>
         <form method="POST" action="/tweets" id="tweet-form">
           <label for="text">What are you humming about?</label>
           <textarea name="text" id="tweet-text" rows="1"></textarea>
