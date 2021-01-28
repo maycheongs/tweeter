@@ -105,11 +105,24 @@ $('#tweet-form').on('submit', function(event) {
 // Hide/Unhide compose section on button click
 
 $(".compose-btn button").on('click', function(event) {
-  $("section.new-tweet").slideToggle();
+  $("section.new-tweet").slideToggle(400, function() {
+    $("#tweet-text").focus();
+  });
   $("nav .compose-btn img").toggle();
 
 
 })
+
+//Back-to-top function:
+
+$(window).on("scroll", () => {
+
+  //check position of this and show the backToTop btn if below a certain position
+  //if above, hide the button again
+})
+
+//button.on click handler
+//scroll back up using $(element).animate({}) with body and scrollTop.
 
 })
 
