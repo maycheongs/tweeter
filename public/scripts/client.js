@@ -3,7 +3,7 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-// const userHelper = require('../../server/lib/util/user-helper')
+
 
 
 $(document).ready(function() {
@@ -31,7 +31,6 @@ const createTweetElement = function(tweetObj) {
 `;
 return tweetEl;
 
-console.log($("<div>").text("Je pense , donc je suis"))
 }
 
 //Loop through array of tweet objs and append to #all-tweets section.
@@ -70,7 +69,7 @@ $('#tweet-form').on('submit', function(event) {
   event.preventDefault();
   $('#tweet-error').closest('.display').hide();
 
-  //Check for invalid text in the form i.e. empty strings/ only spaces.
+  //Check for invalid text in the form i.e. empty strings/ only spaces/ > char limit.
 
   if ($.trim($('#tweet-text').val()) === '') {
 
@@ -85,14 +84,13 @@ $('#tweet-form').on('submit', function(event) {
     $('#tweet-error').closest('.display').slideDown('fast');
     return;
   }
-
-  const formText = $(this).serialize();
+  
   $('#all-tweets').empty();
 
   $.ajax({
     url: `http://localhost:8080/tweets`,
     method: 'POST',
-    data: formText,
+    data: $(this).serialize()
   })
   .done(() => {    
     $('#tweet-text').val('').change();
