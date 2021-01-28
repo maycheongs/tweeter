@@ -2,6 +2,12 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
+## Final Product
+
+!["Desktop view"](https://github.com/maycheongs/tweeter/blob/master/docs/desktop-view.png?raw=true)
+!["Tablet view"](https://github.com/maycheongs/tweeter/blob/master/docs/tablet-view.png?raw=true)
+!["Back to top"](https://github.com/maycheongs/tweeter/blob/master/docs/backtotop.png?raw=true)
+
 
 ## Getting Started
 
