@@ -100,5 +100,16 @@ $('#tweet-form').on('submit', function(event) {
   
 })
 
+
+
+// Hide/Unhide compose section on button click
+
+$(".compose-btn button").on('click', function(event) {
+  $("section.new-tweet").slideToggle();
+  $("nav .compose-btn img").toggle();
+
+
+})
+
 })
 

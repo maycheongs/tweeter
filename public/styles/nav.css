@@ -23,6 +23,7 @@ nav ul {
 
 nav button {
   background:none;
+  border:none;
   outline:none;
   color: #FFFFFF;
   margin: 0 0.5em;
@@ -30,4 +31,33 @@ nav button {
 
 nav button:hover {
   cursor: pointer;  
+}
+
+nav .compose-btn button {
+  height: 84px;
+  padding: 1.3em 1.3em;  
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+
+
+}
+
+nav .compose-btn button img{
+  height:20px;
+  width:20px;
+  margin-left: 0.5em;
+  -webkit-animation: mover 1s infinite  alternate;
+  animation: mover 1s infinite  alternate;
+}
+
+
+@-webkit-keyframes mover {
+    0% { transform: translateY(+10px); }
+    100% { transform: translateY(+20px); }
+}
+@keyframes mover {
+    0% { transform: translateY(+10px); }
+    100% { transform: translateY(+20px); }
 }
