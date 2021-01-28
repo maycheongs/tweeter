@@ -1,43 +1,32 @@
-    
-  
 @media only screen and (min-width: 1024px) {
   body {
-    display:flex;
+    display: flex;
     flex-wrap: wrap;
-    
   }
-
-  nav {
-  background-color: #4056A1;
-  background-image: none; 
-  }
-
   body > header {
     width: 30vw;
     margin: 6vw;
-    flex-grow: 1
+    flex-grow: 1;
   }
-
   body > main {
     width: 40vw;
-    margin:5vw;
-    flex-grow: 1
+    margin: 5vw;
+    flex-grow: 1;
   }
 
-  
-
-
+  nav {
+    background-color: #4056A1;
+    background-image: none;
+  }
 }
-
 @media only screen and (max-width: 500px) {
   nav .brand {
-    font-size: 8vw;  
+    font-size: 8vw;
   }
 
   body {
     font-size: 4vw;
   }
-  
-
-
 }
+
+/*# sourceMappingURL=mediaquery.css.map */

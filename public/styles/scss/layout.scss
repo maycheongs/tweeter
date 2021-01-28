@@ -3,10 +3,12 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
-html {
+
+@use 'vars';
+
+ html {
   box-sizing: border-box;
 }
-
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -14,25 +16,26 @@ html {
 /*
  * Global layout stuff
  */
+
 body {
-  color: #545149;
-  background-color: #f4f1ec;
+  color: vars.$off-black;
+  background-color: vars.$off-white;
   font-size: 24px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: vars.$default-font;  
 }
 
 main {
   width: 90%;
-  margin: 2em auto;
+  margin: 2em auto; 
 }
 
 body > header {
   height: 400px;
   width: 100%;
   padding: 1.5em;
-  background-color: #8f5f00;
+  background-color: vars.$sand;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
-  color: white;
+  color: white;  
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -44,5 +47,3 @@ body > header .profile-pic {
   max-width: 50vw;
   padding: 0.5em;
 }
-
-/*# sourceMappingURL=layout.css.map */

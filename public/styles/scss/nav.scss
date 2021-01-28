@@ -1,0 +1,63 @@
+@use 'vars';
+
+
+nav {
+  background-color: vars.$sand ;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+  color: vars.$off-white;
+  height: 84px;
+  padding: 1.5em;
+  width: 100%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .brand {
+    font-family: vars.$styled-font;
+    font-size: 1.5em;
+  }
+
+}  
+
+.nav-links {
+  list-style-type: none;
+  display:flex;
+}
+
+.nav-compose-btn {
+  background:none;
+  border:none;
+  outline:none;
+  color: vars.$off-white;
+  margin: 1.5em 0 0.5em 0.5em;
+  display:flex;
+  flex-direction: column;
+  align-items: center;  
+  justify-content: center;
+
+  img {
+    height:20px;
+    width:20px;
+    margin-left: 0.5em;
+    -webkit-animation: mover 1s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+  }
+
+  @-webkit-keyframes mover {
+      0% { transform: translateY(+10px); }
+      100% { transform: translateY(+20px); }
+  }
+  @keyframes mover {
+      0% { transform: translateY(+10px); }
+      100% { transform: translateY(+20px); }
+  }
+  
+}
+
+.nav-compose-btn:hover {
+  cursor: pointer;
+}
+

@@ -1,0 +1,39 @@
+@use 'vars';
+
+#tweet-form {
+  display: flex;
+  flex-wrap: wrap;
+
+  .footer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-family: vars.$styled-font;
+    
+    .below-zero {
+      color: red;
+    }
+  }
+
+  button {
+    color: vars.$off-white;
+    background-color: vars.$nav-blue;
+    border: none;
+    outline: none;
+  }
+
+  button:active {    
+    box-shadow: 2px 2px vars.$hover;    
+  }  
+}
+
+#tweet-text {
+  width: 100%;
+  border: 0 none transparent;
+  background: inherit;
+  overflow: hidden;
+  outline:none;
+  border-bottom: 3px solid vars.$off-black;
+  margin-bottom: 0.5em;
+  font-style: italic;
+}

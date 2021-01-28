@@ -14,14 +14,14 @@ const createTweetElement = function(tweetObj) {
     return div.innerHTML;
   }
   const tweetEl = 
-  `<article>
+  `<article class="tweet-box">
     <header>
       <span class="user-name"><img src="${tweetObj.user.avatars}" class="avatar">${tweetObj.user.name}</span><span class="user-id">${tweetObj.user.handle}</span>
     </header>
     <div class="tweeted-text">${escape(tweetObj.content.text)}
     </div>
     <footer>
-      <span class="timestamp">${$.timeago(Number(tweetObj['created_at']))}</span><span class="interact">like buttons</span>
+      <span class="timestamp">${$.timeago(Number(tweetObj['created_at']))}</span><span class="interact"><img src="/images/flag.png"><img src="/images/retweet.png"><img src="/images/like.png"></span>
     </footer>
 </article>
 `;

@@ -2,41 +2,34 @@
   display: flex;
   flex-wrap: wrap;
 }
-
-#tweet-text {
-  width: 100%;
-  
-  background-color: inherit;
-  border: 0 none #FFF;
-  overflow: hidden;
-  outline:none;
-  border-bottom: 3px solid #545149;
-  margin-bottom: 0.5em;
-  font-style: italic;
-}
-
 #tweet-form .footer {
   display: flex;
   width: 100%;
   justify-content: space-between;
-  font-family: Bungee, sans-serif;  
+  font-family: Bungee, sans-serif;
 }
-
+#tweet-form .footer .below-zero {
+  color: red;
+}
 #tweet-form button {
   color: #f4f1ec;
   background-color: #4056A1;
   border: none;
   outline: none;
 }
-
 #tweet-form button:active {
-  color: #f4f1ec;
-  background-color: #4056A1;
   box-shadow: 2px 2px #a3a3c2;
-  border: none;
-  outline: none;
 }
 
-.below-zero {
-  color: #cc0000;
+#tweet-text {
+  width: 100%;
+  border: 0 none transparent;
+  background: inherit;
+  overflow: hidden;
+  outline: none;
+  border-bottom: 3px solid #545149;
+  margin-bottom: 0.5em;
+  font-style: italic;
 }
+
+/*# sourceMappingURL=newtweet.css.map */
