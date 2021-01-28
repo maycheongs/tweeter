@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <!-- Meta Information -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tweeter - Home Page</title>
 
     <!-- External CSS -->
@@ -14,10 +15,13 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/newtweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/alltweets.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/errormsg.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/extras.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/mediaquery.css" type="text/css" />
      
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.6.7/jquery.timeago.min.js" integrity="sha512-RlGrSmkje9EE/FXpJKWf0fvOlg4UULy/blvNsviBX9LFwMj/uewXVoanRbxTIRDXy/0A3fBQppTmJ/qOboJzmA==" crossorigin="anonymous"></script>
     
 
     <!-- App JS -->
@@ -29,9 +33,9 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>      
-      <span>tweeter</span>
-      <ul class="nav-items">
-        <li class="compose-btn"><button><b>Compose</b><img src="/images/002-upload.png" hidden><img src="/images/001-download.png"></button></li>
+      <span class="brand">tweeter</span>
+      <ul class="nav-links">
+        <li class="nav-compose"><button class="nav-compose-btn"><span class="text"><b>Write&nbsp</b> a new tweet</span><img src="/images/002-upload.png"><img src="/images/001-download.png" hidden></button></li>
         
       </ul>    
     </nav>
@@ -40,7 +44,7 @@
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
-      <br>
+      
       <div>
           <h2>Your Name</h2>
       </div>
@@ -48,8 +52,8 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <section class="new-tweet" hidden>
-        <h2>Compose Tweet</h2>
+      <section class="new-tweet">
+        
         <div class="display" id="error-display" hidden>
         <div id="tweet-error">
           <img src="https://www.pngjoy.com/pngl/334/6258437_error-icon-chicken-as-food-hd-png-download.png" alt="Error Icon - Chicken As Food, HD Png Download@pngjoy.com">
@@ -60,7 +64,7 @@
         <form method="POST" action="/tweets" id="tweet-form">
           <label for="text">What are you humming about?</label>
           <textarea name="text" id="tweet-text" rows="1"></textarea>
-          <div>
+          <div class="footer">
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text" data-max="140"></output>
           </div>

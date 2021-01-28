@@ -1,4 +1,4 @@
-main form {
+#tweet-form {
   display: flex;
   flex-wrap: wrap;
 }
@@ -15,21 +15,21 @@ main form {
   font-style: italic;
 }
 
-main form div {
+#tweet-form .footer {
   display: flex;
   width: 100%;
   justify-content: space-between;
   font-family: Bungee, sans-serif;  
 }
 
-form button {
+#tweet-form button {
   color: #f4f1ec;
   background-color: #4056A1;
   border: none;
   outline: none;
 }
 
-form button:active {
+#tweet-form button:active {
   color: #f4f1ec;
   background-color: #4056A1;
   box-shadow: 2px 2px #a3a3c2;

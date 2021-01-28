@@ -21,7 +21,7 @@ const createTweetElement = function(tweetObj) {
     <div class="tweeted-text">${escape(tweetObj.content.text)}
     </div>
     <footer>
-      <span class="timestamp">${moment(Number(tweetObj['created_at'])).fromNow()}</span><span class="interact">like buttons</span>
+      <span class="timestamp">${$.timeago(Number(tweetObj['created_at']))}</span><span class="interact">like buttons</span>
     </footer>
 </article>
 `;
@@ -46,7 +46,7 @@ const renderTweets = function(tweetObjsArr) {
 const loadTweets = function() {
 
   $.ajax({
-    url: `http://localhost:8080/tweets`,
+    url: `/tweets`,
     method: 'GET'
   })
   .done(result => {                    //already JSON parsed
@@ -84,7 +84,7 @@ $('#tweet-form').on('submit', function(event) {
   $('#all-tweets').empty();
 
   $.ajax({
-    url: `http://localhost:8080/tweets`,
+    url: `/tweets`,
     method: 'POST',
     data: $(this).serialize()
   })
@@ -100,12 +100,12 @@ $('#tweet-form').on('submit', function(event) {
 
 // Hide/Unhide compose section on button click
 
-$(".compose-btn button").on('click', function(event) {
+$(".nav-compose-btn").on('click', function(event) {
   $("section.new-tweet").slideToggle(400, function() {
     $("#tweet-text").focus();
     
   });
-  $("nav .compose-btn img").toggle();
+  $(".nav-compose-btn img").toggle();
 
 
 })

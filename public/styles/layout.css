@@ -21,18 +21,28 @@ body {
   font-family: "Source Sans Pro", sans-serif;  
 }  
 
-header {
+body > header {
   height: 400px;
   width: 100%;
+  padding: 1.5em;
+  background-color: #8f5f00;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+  color: #FFFFFF;  
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
 }
 
+body > header > img {
+  max-height: 50vw;
+  max-width: 50vw;
+  padding: 0.5em; 
+}
+
 main {
   width: 90%;
-  margin: auto;  
+  margin: 2em auto; 
 }
 
 
@@ -41,39 +51,6 @@ main {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
-#tweet-error {
-  height:4em;
-  padding: 0.5em; 
-  margin-bottom:2em;
-  display: flex;
-  align-items: center;  
-}
 
-#tweet-error img {
-  height: 100px;
-  width: 100px;
-}
 
-#tweet-error div {
-  width:100%;
-  height:80% ;
-  padding-left:1em;
-  background-color: lightpink;
-  border: 2px solid red;
-  display: flex;
-  align-items: center;  
-}
 
-#to-top-btn {
-  background: none;
-  border:none;
-  position: fixed;
-  bottom: 20px;
-  right: 30px;
-  padding: 15px;
-}
-
-#to-top-btn img {
-  width:100px;
-  height:100px;
-}
