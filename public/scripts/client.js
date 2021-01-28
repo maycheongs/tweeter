@@ -1,8 +1,3 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
 $(document).ready(function() {
 
   //Create html element with a tweet obj.
@@ -96,8 +91,6 @@ $('#tweet-form').on('submit', function(event) {
   
 })
 
-
-
 // Hide/Unhide compose section on button click
 
 $(".nav-compose-btn").on('click', function(event) {
@@ -116,11 +109,12 @@ $(window).on("scroll", () => {
 
   //check position of this and show the backToTop btn if below a certain position else hide again.
 
-  if($(window).scrollTop() > $(window).height()*0.3){
+  if($(this).scrollTop() > $(window).height()*0.3){
     $('#to-top-btn').show()
   } else {
     $('#to-top-btn').hide();
-}
+  }
+})  
 
 //On button click, toggle compose items if hidden then set scrollTop to 0.
 
@@ -131,16 +125,13 @@ $('#to-top-btn').on('click', function(event){
     $('.compose-btn img').toggle();
   }
   $("#tweet-text").focus();
-  $(window).scrollTop(0);
-  
+  $(window).scrollTop(0);  
 })
   
 
-
 })
 
-//button.on click handler
-//scroll back up using $(element).animate({}) with body and scrollTop.
 
-})
+
+
 
