@@ -71,7 +71,7 @@ $('#tweet-form').on('submit', function(event) {
   }
   if ($('#tweet-text').val().length > 140) {
 
-    $('#error-msg').html(` <b>Error</b>&nbspToo long. Please stay within the char limit :)`);
+    $('#error-msg').html(` <b>Error</b>&nbspPlease stay within the char limit :)`);
     $('#error-display').slideDown('fast');
     return;
   }
