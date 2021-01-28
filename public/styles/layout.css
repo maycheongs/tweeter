@@ -64,3 +64,16 @@ main {
   align-items: center;  
 }
 
+#to-top-btn {
+  background: none;
+  border:none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  padding: 15px;
+}
+
+#to-top-btn img {
+  width:100px;
+  height:100px;
+}

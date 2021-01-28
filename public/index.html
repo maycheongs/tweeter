@@ -19,6 +19,8 @@
      
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
@@ -31,7 +33,7 @@
     <nav>      
       <span>tweeter</span>
       <ul class="nav-items">
-        <li class="compose-btn"><button><b>Compose</b><img src="https://github.com/maycheongs/tweeter/blob/master/public/images/002-upload.png?raw=true" hidden><img src="https://github.com/maycheongs/tweeter/blob/master/public/images/001-download.png?raw=true"></button></li>
+        <li class="compose-btn"><button><b>Compose</b><img src="/images/002-upload.png" hidden><img src="/images/001-download.png"></button></li>
         
       </ul>    
     </nav>
@@ -50,7 +52,7 @@
     <main class="container">
       <section class="new-tweet" hidden>
         <h2>Compose Tweet</h2>
-        <div class="display" hidden>
+        <div class="display" id="error-display" hidden>
         <div id="tweet-error">
           <img src="https://www.pngjoy.com/pngl/334/6258437_error-icon-chicken-as-food-hd-png-download.png" alt="Error Icon - Chicken As Food, HD Png Download@pngjoy.com">
           <div id="error-msg">Test Error Message          
@@ -69,6 +71,6 @@
 
       <section id="all-tweets"></section>
     </main>
-    <button id="to-top-btn"><img src="https://github.com/maycheongs/tweeter/blob/master/public/images/scrolltop.png?raw=true"></button>
+    <button id="to-top-btn" hidden><img src="/images/scrolltop.png"></button>
   </body>
 </html>

@@ -3,13 +3,9 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-
-
-
 $(document).ready(function() {
 
-
-//Create html element with a tweet obj.
+  //Create html element with a tweet obj.
 const createTweetElement = function(tweetObj) {
 
   const escape =  function(str) {
@@ -25,7 +21,7 @@ const createTweetElement = function(tweetObj) {
     <div class="tweeted-text">${escape(tweetObj.content.text)}
     </div>
     <footer>
-      <span class="timestamp">created at 51651651</span><span class="interact">like buttons</span>
+      <span class="timestamp">${moment(Number(tweetObj['created_at'])).fromNow()}</span><span class="interact">like buttons</span>
     </footer>
 </article>
 `;
@@ -57,7 +53,7 @@ const loadTweets = function() {
     renderTweets(result); 
   })
   .fail(() => console.log('Error'))
-  .always(() => console.log('get complete'))  
+  .always(() => console.log(Date.now()) )  
 }
 
 loadTweets();
@@ -67,21 +63,21 @@ loadTweets();
 $('#tweet-form').on('submit', function(event) {
   
   event.preventDefault();
-  $('#tweet-error').closest('.display').hide();
+  $('#error-display').hide();
 
   //Check for invalid text in the form i.e. empty strings/ only spaces/ > char limit.
 
   if ($.trim($('#tweet-text').val()) === '') {
 
     $('#error-msg').html(` <b>Error</b>: Please enter something`);
-    $('#tweet-error').closest('.display').slideDown('fast');
+    $('#error-display').slideDown('fast');
     
     return;
   }
   if ($('#tweet-text').val().length > 140) {
 
     $('#error-msg').html(` <b>Error</b>: Too long. Please stay within the char limit :)`);
-    $('#tweet-error').closest('.display').slideDown('fast');
+    $('#error-display').slideDown('fast');
     return;
   }
   
@@ -107,6 +103,7 @@ $('#tweet-form').on('submit', function(event) {
 $(".compose-btn button").on('click', function(event) {
   $("section.new-tweet").slideToggle(400, function() {
     $("#tweet-text").focus();
+    
   });
   $("nav .compose-btn img").toggle();
 
@@ -117,8 +114,29 @@ $(".compose-btn button").on('click', function(event) {
 
 $(window).on("scroll", () => {
 
-  //check position of this and show the backToTop btn if below a certain position
-  //if above, hide the button again
+  //check position of this and show the backToTop btn if below a certain position else hide again.
+
+  if($(window).scrollTop() > $(window).height()*0.3){
+    $('#to-top-btn').show()
+  } else {
+    $('#to-top-btn').hide();
+}
+
+//On button click, toggle compose items if hidden then set scrollTop to 0.
+
+$('#to-top-btn').on('click', function(event){
+
+  if ($('.new-tweet').is(":hidden")) {
+    $('.new-tweet').toggle();
+    $('.compose-btn img').toggle();
+  }
+  $("#tweet-text").focus();
+  $(window).scrollTop(0);
+  
+})
+  
+
+
 })
 
 //button.on click handler
