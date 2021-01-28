@@ -37,17 +37,19 @@
   } 
 
   footer {
-  border-top: 3px solid vars.$off-black;
-  padding: 0.5em;
-  width: 100%;
-  font-size: 0.8em;
-  display: flex;
-  justify-content: space-between;  
+    border-top: 3px solid vars.$off-black;
+    padding: 0.5em;
+    width: 100%;
+    font-size: 0.8em;
+    display: flex;
+    justify-content: space-between; 
+    
   }
 
   .tweeted-text {
     margin: 1em;
   }
+
 
 }
 
@@ -58,7 +60,16 @@
     color: vars.$hover;
   }
 
-  // .interact {
+  .interact {
+    display: flex;
 
-  // }
+    img {
+      margin: 0 0.2em;
+    }
+
+  }
+}
+
+.interact:hover {
+  cursor: pointer;
 }

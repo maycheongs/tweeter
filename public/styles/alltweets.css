@@ -1,22 +1,11 @@
-#all-tweets article {
+.tweet-box {
   border: 3px solid #545149;
   padding: 0.5em;
   margin: 0.5em 0;
   display: flex;
   flex-wrap: wrap;
 }
-#all-tweets article:hover {
-  box-shadow: 5px 5px 5px #a3a3c2;
-}
-#all-tweets article:hover .user-id {
-  color: #a3a3c2;
-}
-#all-tweets .avatar {
-  padding: 0.5em;
-  height: 3em;
-  width: 3em;
-}
-#all-tweets header {
+.tweet-box header {
   padding: 0.5em;
   height: 60px;
   width: 100%;
@@ -25,7 +14,21 @@
   justify-content: space-between;
   align-items: center;
 }
-#all-tweets footer {
+.tweet-box header .avatar {
+  padding: 0.5em;
+  height: 3em;
+  width: 3em;
+}
+.tweet-box header .user-name {
+  display: flex;
+  align-items: center;
+  font-weight: 300;
+}
+.tweet-box header .user-id {
+  color: transparent;
+  margin: 0.5em;
+}
+.tweet-box footer {
   border-top: 3px solid #545149;
   padding: 0.5em;
   width: 100%;
@@ -33,17 +36,25 @@
   display: flex;
   justify-content: space-between;
 }
-#all-tweets .user-name {
-  display: flex;
-  align-items: center;
-  font-weight: 300;
-}
-#all-tweets .user-id {
-  color: transparent;
-  margin: 0.5em;
-}
-#all-tweets .tweeted-text {
+.tweet-box .tweeted-text {
   margin: 1em;
+}
+
+.tweet-box:hover {
+  box-shadow: 5px 5px 5px #a3a3c2;
+}
+.tweet-box:hover .user-id {
+  color: #a3a3c2;
+}
+.tweet-box:hover .interact {
+  display: flex;
+}
+.tweet-box:hover .interact img {
+  margin: 0 0.2em;
+}
+
+.interact:hover {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=alltweets.css.map */

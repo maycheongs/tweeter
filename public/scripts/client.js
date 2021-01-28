@@ -21,7 +21,7 @@ const createTweetElement = function(tweetObj) {
     <div class="tweeted-text">${escape(tweetObj.content.text)}
     </div>
     <footer>
-      <span class="timestamp">${$.timeago(Number(tweetObj['created_at']))}</span><span class="interact"><img src="/images/flag.png"><img src="/images/retweet.png"><img src="/images/like.png"></span>
+      <div class="timestamp">${$.timeago(Number(tweetObj['created_at']))}</div><div class="interact" hidden><img src="/images/flag.png"><img src="/images/retweet.png"><img src="/images/like.png"></div>
     </footer>
 </article>
 `;
@@ -69,14 +69,14 @@ $('#tweet-form').on('submit', function(event) {
 
   if ($.trim($('#tweet-text').val()) === '') {
 
-    $('#error-msg').html(` <b>Error</b>: Please enter something`);
+    $('#error-msg').html(` <b>Error</b>&nbspPlease enter something`);
     $('#error-display').slideDown('fast');
     
     return;
   }
   if ($('#tweet-text').val().length > 140) {
 
-    $('#error-msg').html(` <b>Error</b>: Too long. Please stay within the char limit :)`);
+    $('#error-msg').html(` <b>Error</b>&nbspToo long. Please stay within the char limit :)`);
     $('#error-display').slideDown('fast');
     return;
   }
